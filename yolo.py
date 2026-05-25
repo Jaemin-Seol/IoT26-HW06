@@ -10,7 +10,7 @@ OUTPUT_PATH = "/home/iot3_user/Pictures/photo1.jpeg"
 VEHICLE_CLASSES = [2, 3, 5, 7]
 
 
-model = YOLO("yolov26n.pt")
+model = YOLO("yolo26n.pt")
 
 # setup cams
 picam2 = Picamera2()
