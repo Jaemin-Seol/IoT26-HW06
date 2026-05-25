@@ -1,0 +1,26 @@
+<!-- Template node html file -->
+
+<template>
+  <v-btn @click="takePhoto">
+    Take a photo
+  </v-btn>
+  <img :src="photoUrl" style="width:100%; height:auto;" />
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      photoUrl: '/photo1.jpeg?_=' + Date.now()
+    }
+  },
+  methods: {
+    takePhoto() {
+      this.send({ payload: 1 })
+      setTimeout(() => {
+        this.photoUrl = '/photo1.jpeg?_=' + Date.now()
+      }, 3000)
+    }
+  }
+}
+</script>

@@ -1,0 +1,153 @@
+[
+    {
+        "id": "9a2d25d1bfb7f2cf",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b207b0a1facb6700",
+        "type": "ui-template",
+        "z": "9a2d25d1bfb7f2cf",
+        "group": "0672d2dc7ff04a94",
+        "page": "",
+        "ui": "",
+        "name": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<!-- Template node html file -->\n\n<template>\n  <v-btn @click=\"takePhoto\">\n    Take a photo\n  </v-btn>\n  <img :src=\"photoUrl\" style=\"width:100%; height:auto;\" />\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      photoUrl: '/photo1.jpeg?_=' + Date.now()\n    }\n  },\n  methods: {\n    takePhoto() {\n      this.send({ payload: 1 })\n      setTimeout(() => {\n        this.photoUrl = '/photo1.jpeg?_=' + Date.now()\n      }, 3000)\n    }\n  }\n}\n</script>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 100,
+        "y": 220,
+        "wires": [
+            [
+                "c254ddc953e59f79"
+            ]
+        ]
+    },
+    {
+        "id": "c254ddc953e59f79",
+        "type": "exec",
+        "z": "9a2d25d1bfb7f2cf",
+        "command": "python3 /home/iot3_user/yolo.py",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 320,
+        "y": 220,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "0672d2dc7ff04a94",
+        "type": "ui-group",
+        "name": "Group 1",
+        "page": "6d2ef35380ca90ff",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": true,
+        "disabled": false,
+        "groupType": "default"
+    },
+    {
+        "id": "6d2ef35380ca90ff",
+        "type": "ui-page",
+        "name": "Page 1",
+        "ui": "164deabb49cf9a0c",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "077164f9cead43de",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": 0,
+                "cols": 3
+            },
+            {
+                "name": "Tablet",
+                "px": 576,
+                "cols": 6
+            },
+            {
+                "name": "Small Desktop",
+                "px": 768,
+                "cols": 9
+            },
+            {
+                "name": "Desktop",
+                "px": 1024,
+                "cols": 12
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "164deabb49cf9a0c",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "077164f9cead43de",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "e866338d8f779597",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.30.2"
+        }
+    }
+]
