@@ -6,7 +6,11 @@ The structure of project is simple.
 1. Node-RED Dashboard (template node) sends button click.
 2. Python script is executed and save image at predefind directory.
 3. Dashboard shows the image.
-   
+
+flows.json contains full flow (Node-RED).     
+template.html contains html used in template node.    
+yolo.py is main python file. It takes photo and run YOLO.   
+
 ### VS Code (IDE) screenshot and Node-RED screenshot
 <img width="831" height="435" alt="image" src="https://github.com/user-attachments/assets/7e988011-f12f-4c26-9adb-0a9bffd2f097" />
 <img width="2266" height="1213" alt="IMG_0068" src="https://github.com/user-attachments/assets/a6b12799-b605-43bc-98f0-21392a88aab9" />
