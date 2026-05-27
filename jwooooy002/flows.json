@@ -1,0 +1,126 @@
+[
+    {
+        "id": "eacdcb7157fed2a9",
+        "type": "ui-template",
+        "z": "1101c984ec5f7e07",
+        "g": "bb93f0ae9a6d46d1",
+        "group": "238fffd1c374d6d8",
+        "page": "",
+        "ui": "",
+        "name": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n  <button \n    @click=\"send({payload:'run'}); refreshImage();\"\n    style=\"\n      width: 100%;\n      padding: 20px;\n      margin-bottom: 30px;\n      font-size: 20px;\n      border: none;\n      border-radius: 8px;\n      background-color: #0094ce;\n      color: white;\n      cursor: pointer;\n    \">\n    Take photo!!!\n  </button>\n\n  <div style=\"margin-bottom:40px;\">\n    <img :src=\"imageUrl\" style=\"width:100%;\">\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      imageUrl: '/result.jpg'\n    }\n  },\n  methods: {\n    refreshImage() {\n      setTimeout(() => {\n        this.imageUrl = '/result.jpg?_=' + new Date().getTime()\n      }, 8000)\n    }\n  }\n}\n</script>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 160,
+        "y": 280,
+        "wires": [
+            [
+                "59595a59ea4a7d8d"
+            ]
+        ]
+    },
+    {
+        "id": "238fffd1c374d6d8",
+        "type": "ui-group",
+        "name": "wooyoung",
+        "page": "7c8a41872b1a717e",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "7c8a41872b1a717e",
+        "type": "ui-page",
+        "name": "wooyoung",
+        "ui": "164deabb49cf9a0c",
+        "path": "/page2",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "077164f9cead43de",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "164deabb49cf9a0c",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "077164f9cead43de",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "79f56cb2d6b533b2",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.30.2"
+        }
+    }
+]

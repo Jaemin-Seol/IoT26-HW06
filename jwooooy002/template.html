@@ -1,0 +1,38 @@
+<template>
+  <button 
+    @click="send({payload:'run'}); refreshImage();"
+    style="
+      width: 100%;
+      padding: 20px;
+      margin-bottom: 30px;
+      font-size: 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #0094ce;
+      color: white;
+      cursor: pointer;
+    ">
+    Take photo!!!
+  </button>
+
+  <div style="margin-bottom:40px;">
+    <img :src="imageUrl" style="width:100%;">
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      imageUrl: '/result.jpg'
+    }
+  },
+  methods: {
+    refreshImage() {
+      setTimeout(() => {
+        this.imageUrl = '/result.jpg?_=' + new Date().getTime()
+      }, 8000)
+    }
+  }
+}
+</script>
